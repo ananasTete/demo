@@ -1,4 +1,4 @@
-import { schema } from "@stack/db";
+import { schema } from "@demo/db";
 import { betterAuth } from "better-auth";
 import { drizzleAdapter } from "better-auth/adapters/drizzle";
 
@@ -31,7 +31,7 @@ export const auth = betterAuth({
     .filter(Boolean),
   advanced: {
     // cookie 前缀避免与其他服务的 auth cookie 冲突
-    cookiePrefix: "stack",
+    cookiePrefix: "demo",
   },
 });
 

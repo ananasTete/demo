@@ -1,5 +1,5 @@
 {
-  "name": "stack-template",
+  "name": "demo",
   "private": true,
   "packageManager": "pnpm@10.1.0",
   "engines": {
@@ -10,8 +10,8 @@
     "format": "biome format --write .",
     "lint": "biome lint --write .",
     "typecheck": "pnpm -r run typecheck",
-    "dev:api": "pnpm --filter @stack/api dev",
-    "dev:web": "pnpm --filter @stack/web dev",
+    "dev:api": "pnpm --filter @demo/api dev",
+    "dev:web": "pnpm --filter @demo/web dev",
     "prepare": "lefthook install"
   },
   "devDependencies": {

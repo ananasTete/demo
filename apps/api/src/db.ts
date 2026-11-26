@@ -1,4 +1,4 @@
-import { createDb } from "@stack/db";
+import { createDb } from "@demo/db";
 
 /**
  * API 进程唯一的 db 实例（PGLite 本地模式下多实例开同一数据目录会锁冲突，

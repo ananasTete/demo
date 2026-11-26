@@ -1,4 +1,4 @@
-import { sharedServerSchema } from "@stack/shared";
+import { sharedServerSchema } from "@demo/shared";
 import { createEnv } from "@t3-oss/env-core";
 import { z } from "zod";
 

@@ -1,4 +1,4 @@
-# stack-template
+# demo
 
 pnpm monorepo 全栈模板：Hono + better-auth + Drizzle(ORM) + PostgreSQL 后端，
 Vite + React 19 + TanStack Router/Query + Tailwind v4 前端，内置登录认证全链路。
@@ -26,7 +26,7 @@ cp apps/api/.env.example apps/api/.env.development
 # 生成密钥：openssl rand -base64 32，填入 BETTER_AUTH_SECRET
 
 # 建表（本地零 Docker：不设 DATABASE_URL 时自动用 PGLite，数据在 packages/db/.data/pg）
-pnpm --filter @stack/db migrate
+pnpm --filter @demo/db migrate
 
 # 两个终端分别启动
 pnpm dev:api   # http://localhost:3000
@@ -55,9 +55,9 @@ pnpm dev:web   # http://localhost:5173（/api、/auth 由 vite proxy 转发到 a
 | 命令 | 作用 |
 | --- | --- |
 | `pnpm dev:api` / `pnpm dev:web` | 启动后端 / 前端 dev |
-| `pnpm --filter @stack/db generate` | 改 schema 后生成迁移（`packages/db/src/schema.ts`） |
-| `pnpm --filter @stack/db migrate` | 执行迁移（本地 PGLite 或 DATABASE_URL 指向的 PG） |
-| `pnpm --filter @stack/db studio` | Drizzle Studio 查看数据 |
-| `pnpm --filter @stack/web generate-routes` | 重新生成路由树（routeTree.gen.ts） |
+| `pnpm --filter @demo/db generate` | 改 schema 后生成迁移（`packages/db/src/schema.ts`） |
+| `pnpm --filter @demo/db migrate` | 执行迁移（本地 PGLite 或 DATABASE_URL 指向的 PG） |
+| `pnpm --filter @demo/db studio` | Drizzle Studio 查看数据 |
+| `pnpm --filter @demo/web generate-routes` | 重新生成路由树（routeTree.gen.ts） |
 | `pnpm check` / `pnpm format` / `pnpm lint` | Biome 检查 / 格式化 / 修复 |
 | `pnpm typecheck` | 全仓 TypeScript 检查 |

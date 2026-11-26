@@ -18,8 +18,8 @@ pnpm monorepo 全栈模板：
 | `pnpm dev:api` / `pnpm dev:web` | 启动后端 / 前端 dev |
 | `pnpm typecheck` | 全仓 TypeScript 检查 |
 | `pnpm check` / `pnpm format` / `pnpm lint` | Biome 检查 / 格式化 / 修复 |
-| `pnpm --filter @stack/db generate` \| `migrate` | 生成 / 执行 Drizzle 迁移 |
-| `pnpm --filter @stack/web generate-routes` | 重新生成 `routeTree.gen.ts` |
+| `pnpm --filter @demo/db generate` \| `migrate` | 生成 / 执行 Drizzle 迁移 |
+| `pnpm --filter @demo/web generate-routes` | 重新生成 `routeTree.gen.ts` |
 
 ## 前端状态管理选择
 
@@ -47,7 +47,7 @@ features/<module>/
   hooks.ts          # 或 hooks/：Query 封装 + 业务 hook（超过约 2 个文件再拆目录）
   components/       # 从页面拆出的子组件（有第 2 个才建目录）
   utils.ts          # 或 utils/：模块工具（有第 2 个文件再拆目录）
-  types.ts          # 仅前端私有类型；DTO 用 @stack/shared，不要再抄一份
+  types.ts          # 仅前端私有类型；DTO 用 @demo/shared，不要再抄一份
   <page>.tsx        # 页面入口（路由只挂这一个组件）
   index.ts          # 对外导出：页面、query-keys、必要时 hooks
 ```
@@ -110,7 +110,7 @@ React 19 自带 compiler runtime，**不需要** `react-compiler-runtime`。
 ### 验证是否生效
 
 ```bash
-pnpm --filter @stack/web build
+pnpm --filter @demo/web build
 # 产物中出现 useMemoCache / .memoCache 即说明已编译
 grep -o "useMemoCache" apps/web/dist/assets/*.js | head
 ```

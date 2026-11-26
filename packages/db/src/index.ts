@@ -8,7 +8,7 @@ export type Db = ReturnType<typeof createDb>;
  * 双模式 client：
  * - 传 url：生产/远程，postgres.js 驱动连接真实 PostgreSQL；
  * - 不传 url：本地开发/测试，PGLite 内嵌 PostgreSQL，数据固定落在包内 .data/pg，
- *   与 `pnpm --filter @stack/db migrate` 写入的是同一个库。
+ *   与 `pnpm --filter @demo/db migrate` 写入的是同一个库。
  * 同一套 schema 与迁移，两种环境行为一致（同一 PG 引擎）。
  */
 export async function createDb(opts: { url?: string; dataDir?: string } = {}) {

@@ -1,5 +1,5 @@
 {
-  "name": "@stack/api",
+  "name": "@demo/api",
   "version": "0.0.0",
   "private": true,
   "type": "module",
@@ -10,8 +10,8 @@
   },
   "dependencies": {
     "@hono/node-server": "catalog:",
-    "@stack/db": "workspace:*",
-    "@stack/shared": "workspace:*",
+    "@demo/db": "workspace:*",
+    "@demo/shared": "workspace:*",
     "@t3-oss/env-core": "catalog:",
     "better-auth": "catalog:",
     "drizzle-orm": "catalog:",
